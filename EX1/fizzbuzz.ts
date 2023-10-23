@@ -9,5 +9,9 @@ for (i = 1; i <= 100; i++) {
     else if (i % 3 === 0 && i % 5 === 0) {
         console.log(i, "FizzBuzz");
     }
+    else if{
+        console.log(i);
+    }
 }
+
 
