@@ -11,3 +11,6 @@ functions:
       - http:
           path: hello
           method: post
+      - http:
+          path: hello
+          method: get
