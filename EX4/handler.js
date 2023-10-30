@@ -18,7 +18,6 @@ module.exports.hello = async (event) => {
                 return response;
             } 
             else {
-                response.statusCode = 400;
                 const response = {
                     statusCode: 400,
                     body: JSON.stringify({ error: "Request body must contain 'a' and 'b' properties." }),
