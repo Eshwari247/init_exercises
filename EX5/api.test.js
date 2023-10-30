@@ -1,6 +1,9 @@
 const request = require('supertest');
 const app = require('./app'); // Import your Express app
-
+// Close the server after all tests are done
+afterAll(() => {
+  server.close();
+});
 describe('GET /cal', () => {
   it('should return 0', async () => {
     const response = await request(app).get('/cal');
