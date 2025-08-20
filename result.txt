@@ -1,0 +1,35 @@
+[2025-08-20T10:15:52Z INFO  smith::openai::events] ユーザー発話が作成されました: id=item_C6a98so3mnCjrNhOPQoGH
+[2025-08-20T10:15:53Z INFO  smith::openai::events] ユーザー音声認識結果: 何人いますか? event:{"content_index":0,"event_id":"event_C6a9BFnrBhwHYNIJCipIZ","item_id":"item_C6a98so3mnCjrNhOPQoGH","transcript":"何人いますか?","type":"conversation.item.input_audio_transcription.completed","usage":{"seconds":2,"type":"duration"}}
+[2025-08-20T10:15:53Z DEBUG smith::openai::events] 未処理イベント: response.created
+[2025-08-20T10:15:54Z INFO  smith::openai::events] AI音声アイテム追加: ID item_C6a9BMBHmRaOgV4xptXoF type: function_call
+[2025-08-20T10:15:54Z INFO  smith::openai::events] AI応答アイテムが作成されました: role=
+[2025-08-20T10:15:54Z WARN  smith::openai::events] AI応答アイテムのroleが空です: event={"event_id":"event_C6a9Boh9XaTDkd3EEywL4","item":{"arguments":"","call_id":"call_clSHmStAkccTEnL9","id":"item_C6a9BMBHmRaOgV4xptXoF","name":"mcp_kariya_weather___get_statuses","object":"realtime.item","status":"in_progress","type":"function_call"},"previous_item_id":"item_C6a98so3mnCjrNhOPQoGH","type":"conversation.item.created"}
+[2025-08-20T10:15:54Z DEBUG smith::openai::events] 関数呼び出し引数デルタイベント受信 event:{"call_id":"call_clSHmStAkccTEnL9","delta":"{}","event_id":"event_C6a9BBdJrVKqKCCoDMhhi","item_id":"item_C6a9BMBHmRaOgV4xptXoF","obfuscation":null,"output_index":0,"response_id":"resp_C6a9BO1U0nl6KgzLS5Abi","type":"response.function_call_arguments.delta"}
+[2025-08-20T10:15:54Z DEBUG smith::openai::events] 関数呼び出し引数完了イベント受信: {"arguments":"{}","call_id":"call_clSHmStAkccTEnL9","event_id":"event_C6a9BMptmZzPVOrjKn0B1","item_id":"item_C6a9BMBHmRaOgV4xptXoF","name":"mcp_kariya_weather___get_statuses","output_index":0,"response_id":"resp_C6a9BO1U0nl6KgzLS5Abi","type":"response.function_call_arguments.done"}
+[2025-08-20T10:15:54Z INFO  smith::openai::events] MCPツール呼び出し完了: mcp_kariya_weather___get_statuses
+[2025-08-20T10:15:54Z DEBUG smith::mcp::gateway] ツール呼び出しを転送中: mcp_kariya_weather___get_statuses
+[2025-08-20T10:15:54Z DEBUG smith::mcp::client] ツールを呼び出し中: get_statuses (サーバー: kariya_weather)
+[2025-08-20T10:15:54Z DEBUG reqwest::connect] starting new connection: http://127.0.0.1:8000/
+[2025-08-20T10:15:54Z DEBUG smith::mcp::gateway] ツール呼び出しが完了: mcp_kariya_weather___get_statuses
+[2025-08-20T10:15:54Z INFO  smith::openai::events] MCPツール呼び出し成功: mcp_kariya_weather___get_statuses, value:{"content":[{"text":"{\n  \"driver\": {\n    \"exist\": \"exist\",\n    \"seatbelt\": \"fastened\",\n    \"task\": \"other\",\n    \"steering_grip\": \"off\"\n  },\n  \"front_passenger\": {\n    \"exist\": \"exist\",\n    \"seatbelt\": \"fastened\",\n    \"task\": \"other\"\n  },\n  \"right_rear_passenger\": {\n    \"exist\": \"exist\",\n    \"seatbelt\": \"unfastened\"\n  },\n  \"left_rear_passenger\": {\n    \"exist\": \"exist\",\n    \"seatbelt\": \"unfastened\"\n  }\n}","type":"text"}],"isError":false}
+[2025-08-20T10:15:54Z INFO  smith::openai::events] MCPツール結果: {
+      "driver": {
+        "exist": "exist",
+        "seatbelt": "fastened",
+        "task": "other",
+        "steering_grip": "off"
+      },
+      "front_passenger": {
+        "exist": "exist",
+        "seatbelt": "fastened",
+        "task": "other"
+      },
+      "right_rear_passenger": {
+        "exist": "exist",
+        "seatbelt": "unfastened"
+      },
+      "left_rear_passenger": {
+        "exist": "exist",
+        "seatbelt": "unfastened"
+      }
+    }
